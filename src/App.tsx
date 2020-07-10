@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import { Demo, DemoWithDebug } from './Demo';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component<{}> {
+  render() {
+    return (
+      <div className="App">
+        <h1>TypeScript HOC demo</h1>
+        <p>Click the divs bellow to see the changes</p>
+        <Demo text="This one doesn't console.log" style={{backgroundColor: 'lightgreen'}} />
+        <DemoWithDebug text="This one does" style={{backgroundColor: 'lightblue'}} />
+      </div>
+    );
+  }
 }
 
 export default App;
